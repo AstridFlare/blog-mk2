@@ -54,8 +54,12 @@ export default class Navbar extends Component {
 				</div>
 
 				<ul className="sidenav black " id="mobile-links">
+					<div className="center">
+						<a href="/" className="center">
+							<img src="images/logo.png" alt="logo" style={{ width: 100 }} />
+						</a>
+					</div>
 					<li className="bold center white-text">
-						<img src="favicon.ico" alt="logo" />
 						<hr />
 						Acusio Technologies
 					</li>
@@ -80,6 +84,7 @@ export default class Navbar extends Component {
 							Sign In
 						</a>
 					</li>
+
 					<li>
 						<a href="/signout" className="white-text">
 							Sign Out

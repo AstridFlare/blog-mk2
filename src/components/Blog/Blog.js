@@ -1,96 +1,21 @@
 import React, { Component } from 'react';
 
-export default class Blog extends Component {
+import BlogList from './BlogList';
+import { connect } from 'react-redux';
+
+class Blog extends Component {
 	render() {
-		return (
-			<div className="container row blog-list	">
-				<ul className="collection col s12 m6 offset-m3">
-					<li className="collection-item avatar">
-						<a href="/" className=" btn btn-floating pink lighten-1 circle">
-							AF
-						</a>
+		// console.log(this.props);
+		const { blogs } = this.props;
 
-						<span className="title">Title</span>
-						<p>
-							First Line <br />
-							Second Line
-						</p>
-						<a href="#!" className="secondary-content">
-							<i className="material-icons">grade</i>
-						</a>
-					</li>
-					<li className="collection-item avatar">
-						<a href="/" className=" btn btn-floating pink lighten-1 circle">
-							AF
-						</a>
-						<span className="title">Title</span>
-
-						<p>
-							First Line <br />
-							Second Line
-						</p>
-						<a href="#!" className="secondary-content">
-							<i className="material-icons">grade</i>
-						</a>
-					</li>
-					<li className="collection-item avatar">
-						<a href="/" className=" btn btn-floating pink lighten-1 circle">
-							AF
-						</a>
-
-						<span className="title">Title</span>
-						<p>
-							First Line <br />
-							Second Line
-						</p>
-						<a href="#!" className="secondary-content">
-							<i className="material-icons">grade</i>
-						</a>
-					</li>
-					<li className="collection-item avatar">
-						<a href="/" className=" btn btn-floating pink lighten-1 circle">
-							AF
-						</a>
-
-						<span className="title">Title</span>
-						<p>
-							First Line <br />
-							Second Line
-						</p>
-						<a href="#!" className="secondary-content">
-							<i className="material-icons">grade</i>
-						</a>
-					</li>
-					<li className="collection-item avatar">
-						<a href="/" className=" btn btn-floating pink lighten-1 circle">
-							AF
-						</a>
-
-						<span className="title">Title</span>
-						<p>
-							First Line <br />
-							Second Line
-						</p>
-						<a href="#!" className="secondary-content">
-							<i className="material-icons">grade</i>
-						</a>
-					</li>
-					<li className="collection-item avatar">
-						<a href="/" className=" btn btn-floating pink lighten-1 circle">
-							AF
-						</a>
-
-						<span className="title">Title</span>
-						<p>
-							First Line <br />
-							Second Line
-						</p>
-						<a href="#!" className="secondary-content">
-							<i className="material-icons">grade</i>
-						</a>
-					</li>
-				</ul>
-			</div>
-		);
+		return <BlogList blogs={blogs} />;
 	}
 }
+
+const mapStateToProps = (state) => {
+	return {
+		blogs: state.blog.blogs
+	};
+};
+
+export default connect(mapStateToProps)(Blog);

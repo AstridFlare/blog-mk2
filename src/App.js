@@ -8,6 +8,7 @@ import Blog from './components/Blog/Blog';
 import SignIn from './components/Auth/SignIn';
 import Home from './components/Pages/Home';
 import Contact from './components/Pages/Contact';
+import CreateBlog from './components/Blog/CreateBlog';
 
 class App extends Component {
 	render() {
@@ -20,6 +21,7 @@ class App extends Component {
 						<Route path="/blog" component={Blog} />
 						<Route path="/signin" component={SignIn} />
 						<Route path="/contact" component={Contact} />
+						<Route path="/post" component={CreateBlog} />
 					</Switch>
 				</div>
 			</BrowserRouter>
